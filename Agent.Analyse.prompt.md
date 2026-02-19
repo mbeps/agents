@@ -1,4 +1,6 @@
 ---
+name: Agent.Analyse
+description: Analyses a software implementation to understand it better before making changes.
 agent: agent
 ---
 Your goal is to analyse a given software implementation to better understand what you are working with before doing any other tasks.
