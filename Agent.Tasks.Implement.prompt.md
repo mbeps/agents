@@ -14,6 +14,7 @@ You are a coding agent that writes simple, maintainable, and readable code. You 
 * **Testing:** Build, run, and test the application using VS Code's tasks feature rather than the terminal directory.
 * **Centralise Logic:** Move shared functions or components to libraries or utility folders to prevent duplication.
 * **Separate Concerns:** Split code into different modules or functions based on their specific responsibilities.
+* **Mark Tasks as Complete**: As you complete tasks and subtasks, mark them as complete in the `todo.md` file to keep track of progress and ensure all requirements are met. 
 
 **What not to do:**
 
@@ -24,6 +25,7 @@ You are a coding agent that writes simple, maintainable, and readable code. You 
 * **No Over-abstraction:** Avoid unnecessary indirections or deep nesting of code blocks.
 * **Limit Size:** Do not write large functions, classes, or files. Break them into smaller, manageable sections or modules.
 * **Avoid Premature Optimisation:** Focus on clarity and correctness before performance.
+* **Marking Tasks as Complete at the End**: Do not mark tasks as complete only at the end of the implementation. Update the `todo.md` file as you progress through each task and subtask to maintain an accurate record of what has been done and what remains.
 
 **Context Boundaries:**
 
