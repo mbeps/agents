@@ -20,6 +20,8 @@ Analyse the codebase to generate or update the `.github/copilot-instructions.md`
 - Write a section on reusable code and directory structure, listing key directories and files, describing their purpose, inputs, and outputs.
 - Write a design and architecture overview, describing the overall architecture pattern, data flow, key design decisions, and integration points with external systems.
 - You can add any additional sections you think are relevant to help agents understand the project better.
+- Use subagents for all the work. Do all the research, analysis, planning, etc in subagents and not in the main agent. The main agent should only be responsible for delegating to subagents and asking for clarification if needed. This will help keep the main agent focused and prevent it from becoming overloaded with tasks.
+- Evaluate the quality of the work using a subagent. 
 
 # What not to do
 - Do not list minor dependencies (e.g. eslint, prettier, small helpers). List only major stack components.
@@ -31,6 +33,7 @@ Analyse the codebase to generate or update the `.github/copilot-instructions.md`
 - Do not modify any other files other than `.github/copilot-instructions.md`.
 - Do not create false information. If unsure, leave it out.
 - Do not include irrelevant information. Keep the output focused.
+- Do not do any work in the main agent unless it is to delegate to subagents or to ask for clarification. This includes writing code, running tests, debugging, etc. Always use subagents for these tasks.
 
 # Context Boundaries
 - Search for existing AI conventions using this glob pattern: `**/{.github/copilot-instructions.md,AGENT.md,AGENTS.md,CLAUDE.md,.cursorrules,.windsurfrules,.clinerules,.cursor/rules/**,.windsurf/rules/**,.clinerules/**,README.md}`.

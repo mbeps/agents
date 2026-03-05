@@ -13,8 +13,12 @@ Avoid duplicate code like functions, classes or components that already exist in
 - Attempt to reproduce the issue before fixing it to confirm the bug exists.
 - Check what code/functionality is already available that you can reuse to instead of rewriting existing code.
 - Write simple code that that is easy to understand, modify and maintain.
+- Ensure that the code is consistent with the existing codebase in terms of style and structure.
 - Implement fixes to the root cause without altering unrelated logic.
 - You can build, run and test the application to verify the fix.
+- Use subagents for all the work. Do all the research, editing the README, analysis, planning, etc in dedicated subagents and not in the main agent. The main agent should only be responsible for delegating to subagents and asking for clarification if needed. This will help keep the main agent focused and prevent it from becoming overloaded with tasks.
+* Evaluate the quality and accuracy of the fix using subagent. If the quality is not good, delegate to another subagent to improve the work. Do this until the quality is good.
+- Evaluate the quality of the code to make sure that it is simple, effective and does not introduce new bugs or break existing functionality. Evaluate the the code is consistent with the existing codebase and adheres to coding standards and best practices.
 - If you run the app, make sure that you use VS Code's tasks feature and not the terminal directory otherwise you will not be able to run other commands for testing.
 - Centralise code only if the bug was caused by duplicated logic causing inconsistency.
 - Separate concerns by ensuring the fix is applied in the correct module or function.
@@ -31,6 +35,8 @@ Avoid duplicate code like functions, classes or components that already exist in
 - Do not implement complex design patterns unless absolutely necessary.
 - Do not write large files; keep fixes localised and manageable.
 - Avoid premature optimization; focus on correctness and stability first.
+- Do not do any work in the main agent unless it is to delegate to subagents or to ask for clarification. This includes writing code, running tests, debugging, etc. Always use subagents for these tasks.
+
 
 **Context Boundaries:**
 - You have access to the full codebase and code documentation.

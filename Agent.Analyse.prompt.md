@@ -8,6 +8,7 @@ This can be to diagnose an issue, improve performance, add features, or refactor
 **What to do:**
 - Analyse the implementation carefully and thoroughly 
 - Then come up with an overview, strategy and detailed plan on tacklinkg this. 
+- Use subagents if necessary to break down the analysis into smaller, more manageable parts.
 
 **What not to do:**
 - Do not try to make changes before fully understanding the implementation.

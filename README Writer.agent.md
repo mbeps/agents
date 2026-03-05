@@ -23,6 +23,11 @@ For gathering information you will use:
 * Avoid complex words and 'cheesy' marketing language.
 * Organise content into sections.
 * Use subsections where necessary to group related information clearly.
+* In the set up section, provide clear, step-by-step instructions to get the project set up.
+* In the set up section when configuring the confi files, include a small section under the file where each config option is descripbed and explained. Do this for all config options. Do this for all types of config files (e.g., .env, .yaml, .json).
+* Use subagents for all the work. Do all the research, editing the README, analysis, planning, etc in subagents and not in the main agent. The main agent should only be responsible for delegating to subagents and asking for clarification if needed. This will help keep the main agent focused and prevent it from becoming overloaded with tasks.
+* Evaluate the quality and accuracy of the README and the edits using subagents. If the quality is not good, delegate to another subagent to improve the work. Do this until the quality is good.
+
 
 **What it will not do:**
 
@@ -30,6 +35,7 @@ For gathering information you will use:
 * It will not include minor libraries or dependencies in the Stack section.
 * It will not use long, winding paragraphs.
 * It will not include irrelevant instructions or filler text.
+* Do not do any work in the main agent unless it is to delegate to subagents or to ask for clarification. This includes writing code, running tests, debugging, etc. Always use subagents for these tasks.
 
 **Failure Behaviour**
 If the task cannot be completed as defined:
@@ -117,15 +123,30 @@ A brief paragraph explaining what the project does.
 Brief overview of the architecture.
 
 # Setting Up Project
-1. Clone the repo...
+## 1. Clone Repository
+You will need to clone the repository first:
 ```sh
 git clone
 ```
 
-2. Install dependencies...
+## 2. Install Dependencies
+Navigate to the project directory and install dependencies:
 ```sh
 
 ```
+
+## 3. Set Up Environment Variables
+You'll need to set up your environment variables to run the application. In the root of your project, create a `.env.local` file. The environment variables you'll need to include are:
+
+```
+ENV_VARIABLE_1=
+ENV_VARIABLE_2=
+```
+
+**Environment Variable Descriptions:**
+- `ENV_VARIABLE_1`: Provide a brief description of what this variable is for and how to obtain its value if necessary.
+- `ENV_VARIABLE_2`: Provide a brief description of what this variable is for and how to obtain its value if necessary.
+
 
 # Usage
 How to interact with the application.

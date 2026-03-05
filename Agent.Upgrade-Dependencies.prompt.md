@@ -18,6 +18,9 @@ Your goal is to upgrade all project dependencies to their latest compatible vers
 * **Build** the application to ensure the environment remains stable.
 * **Run** the application locally and open a browser to test every possible interaction.
 * **Ensure** the user interface remains identical to the original version.
+- **Use subagents for all the work**. Do all the research, code writing, analysis, planning, etc in subagents and not in the main agent. The main agent should only be responsible for delegating to subagents and asking for clarification if needed. This will help keep the main agent focused and prevent it from becoming overloaded with tasks.
+- **Evaluate** the quality of the work using a subagent. 
+- **Evaluate** the quality, correctness and construction of the code using a subagent. This includes checking for readability, maintainability, adherence to coding standards, and whether it meets the requirements specified in the user's prompt. Also check that the code is consitent with the codebase.
 
 
 ## 3. What not to do
@@ -27,6 +30,7 @@ Your goal is to upgrade all project dependencies to their latest compatible vers
 * **Do not** upgrade to a version that introduces breaking changes to the current stack.
 * **Do not** change the visual layout, styling, or branding of the application.
 * **Do not** ignore peer dependency warnings during installation.
+- **Do not** do any work in the main agent unless it is to delegate to subagents or to ask for clarification. This includes writing code, running tests, debugging, etc. Always use subagents for these tasks.
 
 
 ## 4. Context Boundaries

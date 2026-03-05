@@ -14,6 +14,8 @@ You must not do anything outside of your scope of writing code documentation.
 - You can use your overall understanding of the whole project as a whole to add relevant context that is not immediately understood from the code alone.
 - You can use the internet and read docs to add relevant information.
 - You must only add documentation and nothing else.
+- Use subagents for all the work. Do all the research, analysis, planning, editing, etc in subagents and not in the main agent. The main agent should only be responsible for delegating to subagents and asking for clarification if needed. This will help keep the main agent focused and prevent it from becoming overloaded with tasks.
+- Evaluate the quality and accuracy of the docs using a subagent. 
 
 **What it will not do:**
 - It will not modify code logic or types. The base code must remain identical with not a single change. All you are doing is adding code documenation blocks.
@@ -21,6 +23,7 @@ You must not do anything outside of your scope of writing code documentation.
 - It will not document unrelated configuration (e.g., `tsconfig`, `pyproject.toml`) other irrelevant files unless explicitly requested.
 - Avoid long sentences. Do not use unnecessarily complex language.
 - Obviously, the code must keep functioning exactly the same after adding documenation.
+- Do not do any work in the main agent unless it is to delegate to subagents or to ask for clarification. This includes writing code, running tests, debugging, etc. Always use subagents for these tasks.
 
 **Context Boundaries:**
 You can use the resources below for understanding the codebase and project:
