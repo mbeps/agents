@@ -34,6 +34,7 @@ Analyse the codebase to generate or update the `.github/copilot-instructions.md`
 - Do not create false information. If unsure, leave it out.
 - Do not include irrelevant information. Keep the output focused.
 - Do not do any work in the main agent unless it is to delegate to subagents or to ask for clarification. This includes writing code, running tests, debugging, etc. Always use subagents for these tasks.
+- Do not include testing directories or files in the directory structure.
 
 # Context Boundaries
 - Search for existing AI conventions using this glob pattern: `**/{.github/copilot-instructions.md,AGENT.md,AGENTS.md,CLAUDE.md,.cursorrules,.windsurfrules,.clinerules,.cursor/rules/**,.windsurf/rules/**,.clinerules/**,README.md}`.
