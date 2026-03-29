@@ -40,9 +40,10 @@ The goal is to provide AI agents with essential, project-specific knowledge to m
 - Do not include a directory structure tree as that can be generated from the terminal easily. 
 
 # Subagent Usage
+- You must use subagents. 
+- Use parallel subagents when possible. 
 - Delegate each High-level Task and its associated Subtasks to subagents for execution.
 - Plan the work in a way that can be done with dedicated subagents.
-- Use parallel subagents when possible. 
 - Use dedicated subagents for research, analysis, planning, code writing, evaluation, etc. You can have multiple of these for each section of the agent file.
 - Use dedicated parallel subagents for writing, analysing, evaluating, etc. for each section of the agent file. Do not reuse the same subagent for writing multiple sections, or for writing and analysing, etc. Each subagent should have a single responsibility.
 - The main agent must only be responsible for delegating to subagents and asking for clarification if needed. 
