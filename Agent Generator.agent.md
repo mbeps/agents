@@ -10,14 +10,14 @@ The goal is to provide AI agents with essential, project-specific knowledge to m
 - Analyse the "Big Picture: Read multiple files to understand service boundaries, data flows, and architectural decisions.
 - Identify Workflows: detailed critical developer workflows (builds, tests, debugging) and commands not obvious from file inspection.
 - Map the Data: Inspect database schemas (SQL, Prisma, etc.) to extract table details and relationships.
-- Map the Code: Identify reusable libraries, components, and interfaces, noting inputs and outputs.
+ - Map the Code: Identify reusable libraries, components, and interfaces, and describe what each does (do not list argument names).
 - Merge & Generate: If `.github/copilot-instructions.md` exists, preserve valuable content while updating it. Output the final result using the **Output Template** below.
 - Accuracy Check: Ensure all technical terms and descriptions accurately reflect the codebase.
 - Overview Section: Write an overview of this project to give context to the agents.
 - Features Section: Write a list of main features as concise bullet points to help agents understand the core functionality.
 - Stack Section: Write a list of major tech stack components (frameworks, languages, databases, key libraries).
 - Database Schema Section: Write a database section detailing the database design including table names, what each table is for, column names and types, and relationships between tables all with brief descriptions.
-- Reusable Code Section: Write a section on reusable code and directory structure, listing key directories and files and describing their purpose. It is possible for a file to have multiple snippets of reusable code (eg. multiple functions) so list these separately with descriptions of their inputs and outputs.
+ - Reusable Code Section: Write a section on reusable code and directory structure, listing key directories and files and describing their purpose. For files with multiple functions or methods, list each as a separate sub-point under the parent file and provide a one-line description of what each does (do not list arguments).
 - Design Section: Write a design and architecture overview, describing the overall architecture pattern, data flow, key design decisions, and integration details.
 - Refereces Section: List links to important documentation, resources, or references.
 - You can add any additional sections you think are relevant to help agents understand the project better.
@@ -96,11 +96,13 @@ Please generate the response using this exact markdown structure:
 
 # Reusable Code & Directory Structure
 - **`[categoryName eg. Components]`**
-  - `[ComponentName]`: [Description of the component and its purpose]
+  - `[ComponentName]`: [One-line description of what the component does]
 - **`[categoryName eg Libs]`**
-  - `[UtilityFunction]`: [Description of the function, its inputs, and outputs]
+  - `[UtilityFunction]`: [One-line description of what the function does]
 - **`[categoryName eg Schemas]`**
   - `[SchemaName]`: [Description of validation or type definition]
+
+> There is no need to include the arguments and paramenters. 
 
 # Design & Architecture Overview
 ## Pattern
