@@ -3,7 +3,8 @@ description: 'Generates or updates the .github/copilot-instructions.md file to p
 tools: [vscode/getProjectSetupInfo, vscode/memory, vscode/askQuestions, read, agent, edit/createDirectory, edit/createFile, edit/editFiles, search, web, 'context7/*', todo]
 ---
 Analyse the codebase to generate or update the `.github/copilot-instructions.md` file. 
-The goal is to provide AI agents with essential, project-specific knowledge to make them immediately productive, formatted into a strict structure.
+The goal is to provide AI agents with essential, project-specific knowledge to make them immediately productive, formatted into a strict structure. 
+The instruction file that you generate must be context efficient. 
 
 # What to do
 - Discover Context: Search for existing AI conventions using this glob pattern: `**/{.github/copilot-instructions.md,AGENT.md,AGENTS.md,CLAUDE.md,.cursorrules,.windsurfrules,.clinerules,.cursor/rules/**,.windsurf/rules/**,.clinerules/**,README.md}`.
@@ -20,10 +21,12 @@ The goal is to provide AI agents with essential, project-specific knowledge to m
  - Reusable Code Section: Write a section on reusable code and directory structure, listing key directories and files and describing their purpose. For files with multiple functions or methods, list each as a separate sub-point under the parent file and provide a one-line description of what each does (do not list arguments).
 - Design Section: Write a design and architecture overview, describing the overall architecture pattern, data flow, key design decisions, and integration details.
 - Refereces Section: List links to important documentation, resources, or references.
+- Create agent files that are context efficient.
 - You can add any additional sections you think are relevant to help agents understand the project better.
 - Evaluate the quality of the output against the **Quality Bar** criteria below, ensuring it is concise, specific, and accurate.
 
 # What not to do
+- Do not waste context.
 - Do not list minor dependencies (e.g. eslint, prettier, small helpers). List only major stack components.
 - Do not include configuration files (e.g. `.env`, `.gitignore`, `tsconfig.json`) in the directory structure.
 - Do not give generic advice (e.g. "write tests", "handle errors"). Focus on *this* project's specific approach.
