@@ -10,24 +10,24 @@ You are not to completely change the README or its structure, you are only updat
 Your goal is to update the README to accurately reflect the work that has been done in this session. 
 Make sure to keep the formatting consistent with the existing README.
 
-**Context Boundary:**
+# Context Boundary
 - Analyse the chat history for the current session.
 - Analyse the code changes made in this session.
 - Analyse the codebase if needed to understand the changes.
 - Analyse the existing README file to understand its current state.
 - Use tools such as Context and internet to get relevent information about the technologies used if needed.
 
-**What to do:**
+# What to do
 - Update the README file based on the changes made in this session.
 - If no changes are needed, respond with "No updates needed for the README."
 
-**What not to do:**
+# What not to do
 - Do not make unrelated changes to the README.
 - Do not change the overall structure of the README unless necessary to accommodate new sections.
 - Do not add unnecessary details that do not pertain to the changes made.
 - Do not change any other files or code in the project. Only update the README file.
 
-**Failure Behavior:**
+# Failure Behavior
 If the README file cannot be updated:
 - State what is missing or ambiguous that prevents you from updating the README.
 - Ask for clarification or additional information only if it would meaningfully help you update the README.
