@@ -8,22 +8,20 @@ The instruction file that you generate must be context efficient.
 
 # What to do
 - Discover Context: Search for existing AI conventions using this glob pattern: `**/{.github/copilot-instructions.md,AGENT.md,AGENTS.md,CLAUDE.md,.cursorrules,.windsurfrules,.clinerules,.cursor/rules/**,.windsurf/rules/**,.clinerules/**,README.md}`.
-- Analyse the "Big Picture: Read multiple files to understand service boundaries, data flows, and architectural decisions.
+- Analyse the "Big Picture": Read multiple files to understand service boundaries, data flows, and architectural decisions.
 - Identify Workflows: detailed critical developer workflows (builds, tests, debugging) and commands not obvious from file inspection.
-- Map the Data: Inspect database schemas (SQL, Prisma, etc.) to extract table details and relationships.
-- Map the Code: Identify reusable libraries, components, and interfaces, and describe what each does (do not list argument names).
+- Map the Data: Inspect database schemas to extract table/collection names, brief descriptions, and column/attribute names only (no attribute descriptions).
+- Map the Code: Identify all reusable code (functions, classes, libs, actions, components, etc.) grouped by category and describe their purpose (do not list argument names).
+- Check for Wikis: Look for `./wiki` directory and link to any wikis found.
 - Merge & Generate: If `.github/copilot-instructions.md` exists, preserve valuable content while updating it. Output the final result using the **Output Template** below.
 - Accuracy Check: Ensure all technical terms and descriptions accurately reflect the codebase.
-- Overview Section: Write an overview of this project to give context to the agents.
-- Features Section: Write a list of main features as concise bullet points to help agents understand the core functionality.
-- Stack Section: Write a list of major tech stack components (frameworks, languages, databases, key libraries).
-- Database Schema Section: Write a database section detailing the database design including table names, what each table is for, column names and types (no need for descriptions), and relationships between tables.
- - Reusable Code Section: Write a section on reusable code and directory structure, listing key directories and files and describing their purpose. For files with multiple functions or methods, list each as a separate sub-point under the parent file and provide a one-line description of what each does (do not list arguments).
-- Refereces Section: List links to important documentation, resources, or references.
-- Create agent files that are context efficient.
-- You can add any additional sections you think are relevant to help agents understand the project better.
+- Intro Section (2-3 sentences): Brief introduction to the project.
+- Tech Stack: List major stack components (frameworks, languages, databases, key libraries) as hyperlinks without descriptions.
+- Database Schema: List table/collection names with brief descriptions and attribute names only.
+- Reusable Code: Group all reusable code by category with one-line purpose descriptions. Include a separate section for non-reused files if relevant.
+- Wikis Section: Link to any wikis found in `./wiki` directory.
+- Create agent files under 80 lines, context-efficient and focused only on essential information.
 - Evaluate the quality of the output against the **Quality Bar** criteria below, ensuring it is concise, specific, and accurate.
-- YOu can include additional relevant details about the project that would be useful for agents to know, but avoid including irrelevant information.
 
 # What not to do
 - Do not waste context.
@@ -73,45 +71,33 @@ The instruction file that you generate must be context efficient.
 - Accurate: Ensure technical terms match the actual code (e.g. don't say "Postgres" if they use "MySQL").
 
 # Output Template
-Please generate the response using this exact markdown structure:
+Please generate the response using this exact markdown structure, keeping the total output under 80 lines:
 
 ```markdown
-# Project Overview
-[Brief summary of what the application does and its primary purpose]
-
-# Features
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
+# Overview
+[2-3 sentence introduction to the project]
 
 # Tech Stack
-- **Framework:** [Major framework, e.g. Next.js]
-- **Language:** [e.g. TypeScript]
-- **Database:** [e.g. PostgreSQL]
-- **Key Libraries:** [Only major tools, e.g. Tailwind, Redux, tRPC]
+- [Major Framework](link)
+- [Language](link)
+- [Database](link)
+- [Key Libraries](link)
 
 # Database Schema
-## [Table Name]
-- **Description:** [Purpose of the table]
-- **Columns:**
-  - `[column_name]`: [Type] - [Description]
-- **Relationships:** [Foreign keys and links to other tables]
+- **[Table/Collection Name]:** [Brief description] - `attribute1`, `attribute2`, `attribute3`
 
-# Reusable Code & Directory Structure
-- **`[categoryName eg. Components]`**
-  - `[ComponentName]`: [One-line description of what the component does]
-- **`[categoryName eg Libs]`**
-  - `[UtilityFunction]`: [One-line description of what the function does]
-- **`[categoryName eg Schemas]`**
-  - `[SchemaName]`: [Description of validation or type definition]
+# Reusable Code
+**[Category Name]**
+- `[CodeName]`: [One-line purpose description]
 
-> There is no need to include the arguments and paramenters. 
+# Other Files
+- `[FileName]`: [One-line purpose description]
 
-# Any Additional Sections You Find Relevant
-
+# Wikis
+- [Wiki Name](./wiki/path)
 
 # References
-- [Link to Documentation or Resource 1](#)
+- [Documentation](link)
 ```
 
-You can add any additional sections you think are relevant to help agents understand the project better.
+Keep it concise. The goal is to provide essential context only—detailed information should come from wikis, docs, and code inspection.
