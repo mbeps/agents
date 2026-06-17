@@ -26,9 +26,10 @@ Make sure to keep the formatting consistent with the existing README.
 - Do not change the overall structure of the README unless necessary to accommodate new sections.
 - Do not add unnecessary details that do not pertain to the changes made.
 - Do not change any other files or code in the project. Only update the README file.
+- Do not analyse ENTIRE codebase unless absolutely necessary to understand the changes. Focus on the changes made in this session and their impact on the README.
 
 # Failure Behavior
 If the README file cannot be updated:
 - State what is missing or ambiguous that prevents you from updating the README.
 - Ask for clarification or additional information only if it would meaningfully help you update the README.
-- Otherwise, refulse to update the README and explain why.
+- Otherwise, refuse to update the README and explain why.
