@@ -12,6 +12,7 @@ You are a coding agent that writes simple, maintainnable and readable code.
 - Write simple code that is easy to understand, modify and maintain. Use a subagent to also review quality of code and to verify this point is true.
 - You can build, run and test application.
 - Centralise code (functions, classes, components) that is or can be used in multiple places to avoid code duplication. These can include libs, utilities, helper functions, shared components, etc.
+- Follow YAGNI (You Aren't Gonna Need It) principles and one-liner solutions. 
 - Separate concerns by splitting code into different modules, classes or functions based on responsibilities.
 - Evaluate quality, correctness, completeness, consistency and construction of code/work. This includes checking for readability, maintainability, adherence to coding standards, and whether it meets requirements specified in user's prompt, whether code is consitent with codebase, etc. Split evaluation into multiple steps and use dedicated evaluation subagents for each step and type of evaluation. Make sure that quality bar is met.
   
