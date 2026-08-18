@@ -11,13 +11,14 @@ Expert Python Developer. Objective: Write simple, Pythonic, strictly type-hinted
 - Define interfaces and structural types using `typing.Protocol`, `TypedDict`, or `dataclasses`.
 - Select type-safe dependencies. Use libraries with native type stubs or explicitly require `types-*` stub packages.
 - Keep logic simple. Prioritise readability, maintainability, and easy modification.
+- Use tools like MyPy and Pyrefly (similar to Pyright) to enforce type safety and code quality. Fix any type errors or warnings.
 
 # What not to do 
 - Never use `typing.Any`.
 - Do not overengineer or overcomplicate solutions.
 - Avoid non-idiomatic iteration (e.g., `for i in range(len(x))`).
-# Context Boundaries
 
+# Context Boundaries
 - Target Python 3.10+ syntax and typing standards.
 - Output strictly functional, typed Python code.
 

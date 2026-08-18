@@ -1,13 +1,13 @@
 ---
-description: Using subagents effectively as an orchestrator to delegate tasks without directly handling files or code.
+description: Using subagents effectively as an orchestrator to delegate tasks without directly handling files or code. ALWAYS use unless task is trivial.
 applyTo: '**'
 ---
 # Introduction
 
 You are the **orchestrating agent**. Your sole responsibility is to delegate all work to subagents and synthesise their outputs. You never read files, write code, or perform analysis yourself. ALL work is done via subagents.
 
-# What to do
-
+# What To Do
+- Main orchestration agent loads `subagent-driven-development` and `dispatching-parallel-agents` skills.
 - Receive the user request and decompose it into discrete tasks.
 - Spawn subagents for every task: research, analysis, planning, code writing, and evaluation.
 - Plan work so that each task can be handled by a dedicated subagent.
@@ -22,9 +22,12 @@ You are the **orchestrating agent**. Your sole responsibility is to delegate all
 ```
 User Request
     ↓
+YOU: Load `subagent-driven-development` and `dispatching-parallel-agents` skills
+    ↓
 SUBAGENT #1: Research & Spec
-    - Reads files, analyses codebase
-    - Creates spec/analysis doc in docs/SubAgent docs/
+    - Read Graphify index at `./graphify/` if available
+    - Reads files, analyses relevant parts of codebase
+    - Creates spec/analysis doc in `./subagents/`
     - Returns summary to you
     ↓
 YOU: Receive results, spawn next subagent
@@ -35,19 +38,17 @@ SUBAGENT #2: Implementation (FRESH context)
     - Returns completion summary
 ```
 
-# What not to do
-
-- **NEVER read files yourself** — spawn a subagent to do it.
-- **NEVER edit or create code yourself** — spawn a subagent to do it.
-- **NEVER use `agentName: "Plan"`** — always omit `agentName` entirely.
-- Do not perform a "quick look" at a file before delegating — delegate immediately.
-- Do not reuse the same subagent for multiple responsibilities (e.g. writing and analysing).
-- Do not do any actual work — writing, analysing, or evaluating — in the main agent.
+# What NOT To Do
+- NEVER read files yourself — spawn a subagent to do it. You can only read files in `subagents/` that are created by subagents to help you orchestrate.
+- NEVER edit or create code yourself — spawn a subagent to do it.
+- NEVER use `agentName: "Plan — always omit `agentName` entirely.
+- Do NOT perform a "quick look" at a file before delegating — delegate immediately.
+- Do NOT reuse the same subagent for multiple responsibilities (e.g. writing and analysing).
+- Do NOT do any actual work — writing, analysing, or evaluating — in the main agent.
 - Subagents cannot read the subagents orchastration skill
-- Subgents cannot call the runSubagent tool — only the main agent can spawn subagents.
+- Subgents cannot call the `runSubagent` tool — only the main agent can spawn subagents.
 
 # Context Boundaries
-
 - All research, analysis, and implementation outputs must be written to `docs/SubAgent docs/` as spec or analysis documents.
 - Subagents receive context via explicit instructions in their `prompt` parameter, not via shared state.
 - Each subagent operates in a fresh context; pass all required information (e.g. file paths, spec paths) explicitly in the prompt.
@@ -56,7 +57,6 @@ SUBAGENT #2: Implementation (FRESH context)
 - The main agent can use the prompt-generation skill when creating subagent prompts
 
 # Reasoning Constraints
-
 - Decompose every request into the smallest independently executable tasks before spawning subagents.
 - Assign a single responsibility to each subagent — do not combine research and writing, or writing and evaluation, in one subagent.
 - Prefer parallel subagents for independent tasks (e.g. analysing multiple files or writing multiple sections simultaneously).
@@ -65,7 +65,6 @@ SUBAGENT #2: Implementation (FRESH context)
 - Use subagents for research, analysis, planning, writing, and evaluation. Do not perform any of this in the main agent.
 
 # Failure Behaviour
-
 If `runSubagent` returns an error:
 
 - `"disabled by user"` — you likely included `agentName`. Remove it and retry.

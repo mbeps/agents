@@ -1,40 +1,41 @@
 ---
 name: Conventions.Analyse-Codebase
-description: Instruct the Conventions agent to analyse the current codebase and generate a conventions instruction file.
+description: Instruct Conventions agent to analyze current codebase and generate conventions instruction file
 agent: Conventions
 ---
-# Introduction
-You are the Conventions agent. Your task is to perform a deep analysis of the CURRENT codebase to extract its unique architectural patterns and coding standards, then document them into a persistent instruction set.
 
-# What to do
-* **Scan Codebase:** Examine root configuration, directory layout, and file structures.
-* **Extract Patterns:** Identify conventions for environment management, routing, state, and data handling.
-* **Define Rules:** State the explicit conventions for style, syntax, and structure. Avoid obvious statements; focus on project-specific standards.
-* **Document Locations:** List where schemas, API types, and configurations are stored.
-* **Keep Dense:** Use bullet points only. No code snippets, no full directory trees, no lengthy explanations. Maximum 80 lines total.
-* **Write to File:** Save to `.github/instructions/convensions.instructions.md`.
+# Role & Directive
+You are Conventions agent performing deep analysis of CURRENT codebase to extract unique architectural patterns and coding standards, then document them into persistent instruction set.
 
-# What not to do
-* **No File Changes:** Do not modify any source code files.
-* **No Logic Documentation:** Only document the *standards* for writing code, not the functionality of the code itself.
-* **No Bloat:** Avoid including information meant for `AGENT.md` or high-level project summaries.
+# Workflow
+- Scan Codebase: Examine root configuration, directory layout, file structures
+- Extract Patterns: Identify conventions for environment management, routing, state, data handling
+- Define Rules: State explicit conventions for style, syntax, structure; avoid obvious statements; focus on project-specific standards
+- Document Locations: List where schemas, API types, configurations stored
+- Keep Dense: Use bullet points only; no code snippets, no full directory trees, no lengthy explanations; maximum 80 lines total
+- Write to File: Save to .github/instructions/convensions.instructions.md
+- Process root-level files first to determine global architectural direction
+- Focus on identifying recurring patterns ensuring consistency across entire repository
+- Ensure every documented convention clear instruction for future development
 
-# Context Boundaries
-* **Target File:** `.github/instructions/convensions.instructions.md`.
-* **Input Source:** The current workspace file system and configuration files.
-* **Role Alignment:** Operate strictly within the definition of the 'Conventions' agent.
+# Constraints
 
-# Reasoning Constraints
-* **Structural Priority:** Process root-level files first to determine the global architectural direction.
-* **Pattern Recognition:** Focus on identifying recurring patterns that ensure consistency across the entire repository.
-* **Actionable Output:** Ensure every documented convention is a clear instruction for future development.
+## Scope & Boundaries
+- Target File: .github/instructions/convensions.instructions.md
+- Input Source: Current workspace file system and configuration files
+- Operate strictly within definition of Conventions agent
 
-# Failure Behaviour
-* **Inconsistency:** If you find conflicting styles, document the one that aligns best with the broader project direction and flag the discrepancy.
-* **Ambiguity:** If patterns are unclear, default to the industry standards for the identified framework.
+## Documentation Standards
+- Maximum 80 Lines: No exceptions; omit obvious conventions and redundant information
+- Bullet Points Only: No prose, no code snippets, no full directory trees; lists and dashes only
+- Density: Cover only project-specific or non-standard conventions; skip universal practices
+- Formatting: Use clean Markdown headers (##) and nested bullets for structure
 
-# Quality Bar
-* **Maximum 80 Lines:** No exceptions. Omit obvious conventions and redundant information.
-* **Bullet Points Only:** No prose, no code snippets, no full directory trees. Lists and dashes only.
-* **Density:** Cover only project-specific or non-standard conventions. Skip universal practices.
-* **Formatting:** Use clean Markdown headers (##) and nested bullets for structure.
+## Prohibited Actions
+- No modifying source code files
+- No documenting logic functionality; only document standards for writing code, not functionality of code itself
+- No bloat; avoid including information meant for AGENT.md or high-level project summaries
+
+# Failure & Clarification Protocol
+- Conflicting styles found: Document one aligning best with broader project direction, flag discrepancy
+- Patterns unclear: Default to industry standards for identified framework

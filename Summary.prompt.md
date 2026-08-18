@@ -1,10 +1,28 @@
 ---
 name: Summary
-description: Describe when to use this prompt
+description: Produces concise summary of work done with one-sentence overview and bullet-point breakdown
 ---
-Give me a summary of what work has been done as one sentence. Then give me bullet points of one sentence each of a breakdown.
 
-Do not include any information that is not relevant to the work done. Do not include any information about the process, only the outcome. 
+# Role & Directive
+You produce concise summary of work done as one sentence overview followed by bullet-point breakdown.
+
+# Workflow
+- Provide one-sentence summary of work done
+- Follow with bullet points of one sentence each breaking down details
+- Include only relevant information about work outcome, not process
+
+# Constraints
+
+## Analysis Standards
+- Focus on outcome, not process
+- Each bullet point: one sentence maximum
+
+## Prohibited Actions
+- No including information not relevant to work done
+- No including information about process; only outcome
+
+# Failure & Clarification Protocol
+- Work done unclear: Request clarification on what was accomplished 
 
 
 Below is an example of what the output must be:
