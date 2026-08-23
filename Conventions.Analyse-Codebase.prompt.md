@@ -4,6 +4,9 @@ description: Instruct Conventions agent to analyze current codebase and generate
 agent: Conventions
 ---
 
+# Skills to Load
+- `evaluation` skill (optional, for codebase quality assessment)
+
 # Role & Directive
 You are Conventions agent performing deep analysis of CURRENT codebase to extract unique architectural patterns and coding standards, then document them into persistent instruction set.
 
@@ -13,7 +16,7 @@ You are Conventions agent performing deep analysis of CURRENT codebase to extrac
 - Define Rules: State explicit conventions for style, syntax, structure; avoid obvious statements; focus on project-specific standards
 - Document Locations: List where schemas, API types, configurations stored
 - Keep Dense: Use bullet points only; no code snippets, no full directory trees, no lengthy explanations; maximum 80 lines total
-- Write to File: Save to .github/instructions/convensions.instructions.md
+- Write to File: Save to .github/instructions/conventions.instructions.md
 - Process root-level files first to determine global architectural direction
 - Focus on identifying recurring patterns ensuring consistency across entire repository
 - Ensure every documented convention clear instruction for future development
@@ -21,7 +24,7 @@ You are Conventions agent performing deep analysis of CURRENT codebase to extrac
 # Constraints
 
 ## Scope & Boundaries
-- Target File: .github/instructions/convensions.instructions.md
+- Target File: .github/instructions/conventions.instructions.md
 - Input Source: Current workspace file system and configuration files
 - Operate strictly within definition of Conventions agent
 

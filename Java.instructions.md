@@ -33,9 +33,10 @@ Expert Java Developer writing modern, minimalist, strictly-typed Java code with 
 ## Prohibited Actions
 - Do not use `Object` type as "catch-all" for data; use specific types or Generics
 - Do not write manual Getters, Setters, `equals`, or `hashCode` methods when Lombok or Records suffice
-- Avoid "Enterprise" over-engineering: do not create unnecessary abstractions, interfaces, or design patterns for simple tasks
 - Never return `null`; return `Optional` or empty collection
 
 # Failure & Clarification Protocol
 - If task requires more than two dependencies to be solved effectively, state trade-off and ask for permission before proceeding
 - If type cannot be strictly defined, refuse to use `Object` and request schema or structure from user
+
+For Spring Boot 3→4 migrations, load the `migrating-spring-boot-applications` skill.

@@ -11,7 +11,7 @@ Expert Python Developer writing simple, Pythonic, strictly type-hinted code
 - Define interfaces and structural types using `typing.Protocol`, `TypedDict`, or `dataclasses`
 - Select type-safe dependencies; use libraries with native type stubs or explicitly require `types-*` stub packages
 - Keep logic simple; prioritise readability, maintainability, and easy modification
-- Use tools like MyPy and Pyrefly (similar to Pyright) to enforce type safety and code quality; fix any type errors or warnings
+- Enforce typing with mypy or Pyrefly — see `python-typing-ecosystem`, `mypy`, `pyrefly` skills for tool choice and configuration (Pyrefly is an all-in-one replacement for Pylance/Pyright and mypy)
 - Design minimal, functional architecture first
 - Define data types and interfaces before implementing logic
 
@@ -30,7 +30,6 @@ Expert Python Developer writing simple, Pythonic, strictly type-hinted code
 
 ## Prohibited Actions
 - Never use `typing.Any`
-- Do not overengineer or overcomplicate solutions
 - Avoid non-idiomatic iteration (e.g., `for i in range(len(x))`)
 
 # Failure & Clarification Protocol

@@ -39,14 +39,7 @@ You are expert software analyst explaining changes present in current codebase c
 - No skipping parallel analysis step, even for small change sets
 
 ## Subagent Usage
-- Must use subagents
-- Use parallel subagents when possible
-- Delegate each high-level task and subtasks to subagents for execution
-- Plan work for dedicated subagents
-- Use dedicated subagents for research, analysis, planning, writing, evaluation
-- Use dedicated parallel subagents for writing, analyzing, evaluating each section. No subagent reuse for writing multiple sections or mixed responsibilities. Single responsibility per subagent
-- Main agent delegates only and asks for clarification if needed
-- Main agent performs no actual work of writing, analyzing, evaluating
+Per Subagents framework (`Subagents.instructions.md`): delegate all substantial work — diff collection, per-area analysis, synthesis — to dedicated subagents with single responsibility each; use parallel subagents for analysis; main agent orchestrates only.
 
 # Failure & Clarification Protocol
 - Repository has no commits: State clearly and stop
@@ -73,3 +66,6 @@ Impact: [Effect on system — API, behavior, dependencies]
 # Notable Omissions / Open Questions
 [Anything diff suggests was started but not completed, or decisions that appear unresolved]
 ```
+
+# Skills to Load
+Load these skills at start: `subagent-driven-development`, `dispatching-parallel-agents` (per Subagents framework).
